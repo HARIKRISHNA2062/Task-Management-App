@@ -4,7 +4,7 @@ let editId = null;
 
 // Load Tasks
 async function loadTasks() {
-    const response = await fetch("http://localhost:5000/api/tasks");
+    const response = await fetch("https://task-management-app-1-s8kh.onrender.com/api/tasks");
     const tasks = await response.json();
 
     taskList.innerHTML = "";
@@ -39,7 +39,7 @@ taskForm.addEventListener("submit", async (e) => {
 
     if (editId) {
 
-        await fetch(`http://localhost:5000/api/tasks/${editId}`, {
+        await fetch(`https://task-management-app-1-s8kh.onrender.com/api/tasks/${editId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -51,7 +51,7 @@ taskForm.addEventListener("submit", async (e) => {
 
     } else {
 
-        await fetch("http://localhost:5000/api/tasks", {
+        await fetch("https://task-management-app-1-s8kh.onrender.com/api/tasks", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -67,7 +67,7 @@ taskForm.addEventListener("submit", async (e) => {
 
 // Delete Task
 async function deleteTask(id) {
-    await fetch(`http://localhost:5000/api/tasks/${id}`, {
+    await fetch(`https://task-management-app-1-s8kh.onrender.com/api/tasks/${id}`, {
         method: "DELETE"
     });
 
